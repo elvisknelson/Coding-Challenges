@@ -3,11 +3,27 @@ let canvasHeight = 600;
 
 let walls;
 let rays = [];
-let light;
+let player;
 
 function setup() {
     createCanvas(canvasWidth, canvasHeight);
-    light = new LightSource(createVector(300, 300));
+    createWalls();
+
+    player = new Player(createVector(300, 300), 0);
+}
+
+function draw() {
+    background(0);
+
+    walls.forEach(wall => {
+        wall.draw();
+    });
+
+    player.update();
+    player.draw();
+}
+
+function createWalls() {
     walls = [];
 
     walls.push(new Wall(200, 0, 0, 200));
@@ -19,16 +35,4 @@ function setup() {
     walls.push(new Wall(50, 50, 50, 550));
     walls.push(new Wall(550, 50, 550, 550));
     walls.push(new Wall(550, 550, 50, 550));
-}
-
-function draw() {
-    background(0);
-
-    walls.forEach(wall => {
-        wall.draw();
-    });
-    light.update(mouseX, mouseY);
-    light.castRays(walls);
-
-    light.draw();
 }

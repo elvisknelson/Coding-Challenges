@@ -1,16 +1,23 @@
 class LightSource
 {
-    constructor(pos, numRays) {
+    constructor(pos, intensity, fov) {
         this.pos = pos;
         this.rays = [];
+        this.fov = fov;
+        this.intensity = intensity;
+        this.facingDir = 0;
 
-        for (let i = 0; i < 360; i += 1) {
+        for (let i = 0; i < fov; i += intensity) {
             this.rays.push(new Ray(this.pos, radians(i)));
         }
     }
 
-    update(x, y) {
+    update(x, y, facingDir) {
         this.pos.set(x, y);
+
+        for (let i = 0; i < this.fov; i += this.intensity) {
+            this.rays[i].dir = p5.Vector.fromAngle(radians(i) + facingDir);
+        }
     }
 
     castRays(walls) {
