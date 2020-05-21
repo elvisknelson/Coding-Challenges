@@ -3,7 +3,10 @@ class Point
     constructor() {
         this.pos = createVector(900, 450);
         this.dir = p5.Vector.fromAngle(Math.random() * 360);
-        this.speed = 1;
+        this.speed = Math.random() + 1;
+        // this.r = Math.random() * 100;
+        // this.g = Math.random() * 100;
+        // this.b = Math.random() * 100;
     }
 
     update() {

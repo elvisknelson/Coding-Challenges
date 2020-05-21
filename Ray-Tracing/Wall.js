@@ -6,7 +6,7 @@ class Wall
     }
 
     draw() {
-        stroke(255);
+        stroke(0);
         line(this.a.x, this.a.y, this.b.x, this.b.y);
     }
 }
