@@ -15,7 +15,8 @@ function setup() {
 
 function draw() {
     background(0);
-
+    textSize(33);
+    text(parseInt(getFrameRate()), 10, 30);
     quadTree = new QuadTree(new Boundary(canvasWidth/2, canvasHeight/2, canvasWidth/2, canvasHeight/2));
 
     for (let i = 0; i < n; i++) {
