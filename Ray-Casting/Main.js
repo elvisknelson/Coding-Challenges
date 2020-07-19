@@ -31,6 +31,9 @@ function createWalls() {
     walls.push(new Wall(0, 400, 200, 600));
     walls.push(new Wall(400, 600, 600, 400));
 
+    walls.push(new Wall(200, 200, 400, 200));
+    walls.push(new Wall(200, 400, 400, 400));
+
     walls.push(new Wall(50, 50, 550, 50));
     walls.push(new Wall(50, 50, 50, 550));
     walls.push(new Wall(550, 50, 550, 550));
