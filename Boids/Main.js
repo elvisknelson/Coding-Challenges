@@ -6,20 +6,15 @@ let alignSlider, cohesionSlider, separationSlider;
 
 function setup() {
     createCanvas(canvasWidth, canvasHeight);
-    // alignSlider = createSlider(0, 5, 1, 0.1);
-    // alignSlider.position(50, canvasHeight + 20);
-
-    // cohesionSlider = createSlider(0, 5, 1, 0.1);
-    // cohesionSlider.position(alignSlider.width + 56, canvasHeight + 20);
-
-    // separationSlider = createSlider(0, 5, 1, 0.1);
-    // separationSlider.position(cohesionSlider.width + alignSlider.width + 55, canvasHeight + 20);
-    createBoids(200);
+    createBoids(1000);
 }
 
 function draw() {
     background(0);
-
+    
+    textSize(33);
+    text(parseInt(getFrameRate()), 10, 30);
+    
     boids.forEach(boid => {
         boid.draw();
         boid.update();

@@ -14,10 +14,6 @@ class Boid
         let cohesion = this.cohesion(flock);
         let separation = this.separation(flock);
 
-        // separation.mult(separationSlider.value());
-        // cohesion.mult(cohesionSlider.value());
-        // align.mult(alignSlider.value());
-
         this.acceleration.add(align);
         this.acceleration.add(cohesion);
         this.acceleration.add(separation);
